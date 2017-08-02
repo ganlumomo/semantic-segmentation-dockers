@@ -12,6 +12,4 @@ WORKDIR /workspace
 # https://github.com/docker/hub-feedback/issues/460
 ENV CLONE_TAG="master"
 
-RUN git clone -b ${CLONE_TAG} --depth 1 https://github.com/fyu/dilation.git . && \
-
-WORKDIR /workspace/dilation
+RUN git clone -b ${CLONE_TAG} --depth 1 https://github.com/fyu/dilation.git .
