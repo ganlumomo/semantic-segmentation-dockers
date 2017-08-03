@@ -21,7 +21,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python-numpy \
         python-pip \
         python-setuptools \
-	python-tk \
         python-scipy && \
     rm -rf /var/lib/apt/lists/*
 
@@ -38,6 +37,11 @@ RUN git clone -b ${CLONE_TAG} --depth 1 https://github.com/TimoSaemann/caffe-seg
     mkdir build && cd build && \
     cmake -DUSE_CUDNN=1 .. && \
     make -j"$(nproc)"
+
+# segnet python dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	python-tk \
+	python-sklearn \
 
 ENV PYCAFFE_ROOT $CAFFE_ROOT/python
 ENV PYTHONPATH $PYCAFFE_ROOT:$PYTHONPATH

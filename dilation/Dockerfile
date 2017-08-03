@@ -6,7 +6,7 @@ RUN pip install opencv-python && \
     pip install numba
 
 # clone dilation repo
-WORKDIR /workspace
+WORKDIR /workspace/dilation
 
 # FIXME: use ARG instead of ENV once DockerHub supports this
 # https://github.com/docker/hub-feedback/issues/460
