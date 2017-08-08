@@ -1,6 +1,11 @@
 FROM bvlc/caffe:gpu
 LABEL maintainer ganlu@umich.edu
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	vim \
+	python-sklearn \
+	python-tk
+
 # dilation python dependencies
 RUN pip install opencv-python && \
     pip install numba
