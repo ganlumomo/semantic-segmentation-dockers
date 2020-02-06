@@ -18,13 +18,13 @@
 
 ## Create a container
 
-`git clone git@github.com:UMich-BipedLab/docker_images.git`
+`git clone https://github.com/ganlumomo/semantic-segmentation-dockers.git`
 
-`cd semantic_mapping_melodic`
+`cd semantic-segmentation-dockers`
 
-`docker build --tag umrobotics/semantic_mapping_melodic .`
+`docker build --tag ganlu/v1 .`
 
-`bash run_cuda_docker.bash [container_name]`
+`bash run_docker.bash [container_name]`
 
 ## Open the container
 
