@@ -1,4 +1,5 @@
-FROM tensorflow/tensorflow:1.12.0-devel-gpu-py3
+#FROM tensorflow/tensorflow:1.12.0-devel-gpu-py3
+FROM nvidia-segmgentation:latest
 
 MAINTAINER Lu Gan, ganlu@umich.edu
 

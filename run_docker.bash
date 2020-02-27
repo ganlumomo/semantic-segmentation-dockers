@@ -14,6 +14,7 @@ docker run -it --net=host --runtime=nvidia \
   -v "/etc/shadow:/etc/shadow:ro" \
   -v "/etc/sudoers.d:/etc/sudoers.d:ro" \
   -v "/home/$USER/Docker/:/home/$USER/" \
+  -v "/media/$USER/PERL-SSD/:/home/$USER/media/PERL-SSD" \
   --device=/dev/dri:/dev/dri \
   --name=${container_name} \
-  ganlu/v1:latest
+  ganlu/v2:latest
