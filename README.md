@@ -12,7 +12,11 @@
 
 [https://docs.docker.com/install/linux/linux-postinstall/](https://docs.docker.com/install/linux/linux-postinstall/)
 
-## Download a Docker image
+## Download an official Docker image
+
+### PyTorch
+
+[https://ngc.nvidia.com/catalog/containers/nvidia:pytorch](https://ngc.nvidia.com/catalog/containers/nvidia:pytorch)
 
 ### Tensorflow
 
@@ -24,20 +28,28 @@
 
 `nvidia-docker run -ti bvlc/caffe:gpu caffe --version`
 
-## Create a container
+## Build a customized Docker image (optional)
 
 `git clone https://github.com/ganlumomo/semantic-segmentation-dockers.git`
 
 `cd semantic-segmentation-dockers`
 
-(might need to change FROM in Dockerfile according to the docker image)
+(might need to change FROM in Dockerfile according to the official docker image)
 
-`docker build --tag ganlu/v1 .`
+`docker build --tag [customized_image_name] .`
+
+`docker build --t [customized_image_name] -f Dockerfile .`
+
+## Create a container
+
+(might need to change the last line in run_docker.bash to [image_name:tag])
 
 `bash run_docker.bash [container_name]`
 
 ## Open the container
 
 `docker ps -a`
+
+`docker start [container_name]`
 
 `docker exec -it [container_name] /bin/bash`
